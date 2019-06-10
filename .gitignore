@@ -1,0 +1,27 @@
+node_modules/
+bower_components/
+coverage/
+.sass-cache/
+.idea/
+.tmp/
+dist/
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+src/.DS_Store
+
+src/assets/.DS_Store
+
+src/assets/images/.DS_Store
+
+.idea/workspace.xml
+build
+.vscode/settings.json
+yarn.lock
