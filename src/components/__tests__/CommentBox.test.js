@@ -20,6 +20,8 @@ it("has a text area and a button", () => {
 
 it("has a text area that users can type in", () => {
   component.find("textarea").simulate("change", {
-    target: { value: "new comment " }
+    target: { value: "new comment" }
   });
+  component.update();
+  expect(component.find("textarea").prop("value")).toEqual("new comment");
 });
