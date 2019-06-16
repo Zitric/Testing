@@ -1,6 +1,5 @@
 import { saveComment } from "state/actions";
-import { SAVE_COMMENT } from "state/actions/type";
-import Item from "antd/lib/list/Item";
+import { SAVE_COMMENT } from "state/actions/types";
 
 describe("saveComent", () => {
   it("has the correct type", () => {

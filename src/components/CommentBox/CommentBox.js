@@ -11,11 +11,8 @@ class CommentBox extends React.Component {
     event.preventDefault();
 
     this.props.saveComment(this.state.comment);
-
     this.setState({ comment: "" });
   };
-
-  handleFetchComments = () => "";
 
   render() {
     return (
@@ -27,7 +24,7 @@ class CommentBox extends React.Component {
             <button>Submit comment</button>
           </div>
         </form>
-        <button onClick={this.props.handleFetchComments}>Fetch Comments</button>
+        <button onClick={this.props.fetchComments}>Fetch Comments</button>
       </div>
     );
   }
