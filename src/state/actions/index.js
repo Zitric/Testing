@@ -1,19 +1,23 @@
 import axios from "axios";
-import { SAVE_COMMENT } from "state/actions/types";
-import { FETCH_COMMENTS } from "./types";
+import { SAVE_COMMENT, FETCH_COMMENTS, CHANGE_AUTH } from "state/actions/types";
 
-export function saveComment(comment) {
-  return {
-    type: SAVE_COMMENT,
-    payload: comment
-  };
-}
+export const saveComment = comment => {
+    return {
+        type: SAVE_COMMENT,
+        payload: comment
+    };
+};
 
-export function fetchComments() {
-  const response = axios.get("https://jsonplaceholder.typicode.com/comments");
-  console.log("fetching");
-  return {
-    type: FETCH_COMMENTS,
-    payload: response
-  };
-}
+export const fetchComments = () => {
+    return {
+        type: FETCH_COMMENTS,
+        payload: axios.get("https://jsonplaceholder.typicode.com/comments")
+    };
+};
+
+export const changeAuth = isLoggedIn => {
+    return {
+        type: CHANGE_AUTH,
+        papyload: isLoggedIn
+    };
+};
