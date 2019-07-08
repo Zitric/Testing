@@ -18,6 +18,6 @@ export const fetchComments = () => {
 export const changeAuth = isLoggedIn => {
     return {
         type: CHANGE_AUTH,
-        papyload: isLoggedIn
+        payload: isLoggedIn
     };
 };

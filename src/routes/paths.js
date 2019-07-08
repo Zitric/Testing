@@ -1,4 +1,4 @@
-export const paths = {
+export default {
     ROOT: "/",
     POST: "/POST"
 };

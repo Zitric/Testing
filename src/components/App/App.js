@@ -1,11 +1,20 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
 import Routes from "routes/routes";
 import paths from "routes/paths";
-
+import * as actions from "state/actions";
 import "components/App/App.scss";
 
-export default class App extends React.Component {
+class App extends React.Component {
+    renderButton() {
+        return this.props.auth ? (
+            <button onClick={() => this.props.changeAuth(false)}>Sign Out</button>
+        ) : (
+            <button onClick={() => this.props.changeAuth(true)}>Sign In</button>
+        );
+    }
+
     renderHeader() {
         return (
             <ul>
@@ -13,11 +22,9 @@ export default class App extends React.Component {
                     <NavLink to={paths.ROOT}>Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to={paths.ROOT}>Home</NavLink>
+                    <NavLink to={paths.POST}>Post a Comment</NavLink>
                 </li>
-                <li>
-                    <NavLink to={paths.ROOT}>Home</NavLink>
-                </li>
+                <li>{this.renderButton()}</li>
             </ul>
         );
     }
@@ -25,8 +32,18 @@ export default class App extends React.Component {
     render() {
         return (
             <div className="App">
+                {this.renderHeader()}
                 <Routes key={Math.random()} />
             </div>
         );
     }
 }
+
+function mapStateToProps(state) {
+    return { auth: state.auth };
+}
+
+export default connect(
+    mapStateToProps,
+    actions
+)(App);
