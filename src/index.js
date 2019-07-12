@@ -8,8 +8,6 @@ import App from 'components/App/App'
 
 import 'index.scss'
 
-import * as serviceWorker from './serviceWorker'
-
 const history = createBrowserHistory()
 
 ReactDOM.render(
@@ -20,5 +18,3 @@ ReactDOM.render(
   </Root>,
   document.querySelector('#root'),
 )
-
-serviceWorker.unregister()

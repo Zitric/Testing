@@ -1,11 +1,11 @@
-import { CHANGE_AUTH } from "state/actions/types";
+import { CHANGE_AUTH } from 'state/actions/types'
 
 export default (state = false, action) => {
-    switch (action.type) {
-        case CHANGE_AUTH:
-            return action.payload;
+  switch (action.type) {
+    case CHANGE_AUTH:
+      return action.payload
 
-        default:
-            return state;
-    }
-};
+    default:
+      return state
+  }
+}

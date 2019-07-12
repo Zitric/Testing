@@ -1,4 +1,4 @@
 export default {
-    ROOT: "/",
-    POST: "/POST"
-};
+  ROOT: '/',
+  POST: '/POST',
+}
